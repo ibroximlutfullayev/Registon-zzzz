@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rasm Sayti</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #f0f0f0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rasm Sayti</title>
+  <style>
+    :root{--bg:#f0f0f0}
+    body{margin:0;padding:20px;display:flex;flex-direction:column;align-items:center;gap:20px;
+      min-height:100vh;box-sizing:border-box;background:var(--bg);font-family:Arial,Helvetica,sans-serif}
+    .card{max-width:900px;width:100%;background:white;border-radius:12px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,.12);
+      display:flex;flex-direction:row;gap:18px;align-items:center;flex-wrap:wrap}
+    .image-wrap{flex:1 1 420px;display:flex;justify-content:center;align-items:center}
+    .image-wrap img{max-width:100%;height:auto;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+    .qr-wrap{width:220px;flex:0 0 220px;text-align:center}
+    .qr-wrap img{width:200px;height:auto;border-radius:8px;border:1px solid #eee}
+    .hint{font-size:14px;color:#333;margin-top:8px}
+    @media (max-width:600px){ .card{flex-direction:column} .qr-wrap{width:100%;order:2} }
+  </style>
 </head>
 <body>
-    <img src="Gemini_Generated_Image_oyeei8oyeei8oyee.png" alt="Sayt rasmi" />
+  <div class="card">
+    <div class="image-wrap">
+      <img src="Gemini_Generated_Image_oyeei8oyeei8oyee.png" alt="Sayt rasmi">
+    </div>
+
+    <div class="qr-wrap">
+      <img id="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://ibroximlutfullayev.github.io/Registon-zzzz/" alt="QR-kod">
+      <div class="hint">Telefon kamerasi bilan skaner qiling</div>
+      <div style="margin-top:8px;font-size:13px;color:#666">
+        <a href="https://ibroximlutfullayev.github.io/Registon-zzzz/" target="_blank" rel="noopener">
+          Saytga kirish
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
